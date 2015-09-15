@@ -1,8 +1,8 @@
-class CellarsController < ApplicationController
+class BottlesController < ApplicationController
 
   #index
   def index
-    @cellars = Cellar.all
+    @bottles = Bottle.allnah that
   end
 
   #show

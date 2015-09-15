@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20150915155156) do
   enable_extension "plpgsql"
 
   create_table "bottles", force: :cascade do |t|
-    t.string  "name"
-    t.string  "region"
-    t.string  "varietal"
+    t.string  "winery",    null: false
+    t.string  "region",    null: false
+    t.string  "varietal",  null: false
     t.integer "year"
     t.integer "cellar_id"
   end
@@ -27,7 +27,8 @@ ActiveRecord::Schema.define(version: 20150915155156) do
   add_index "bottles", ["cellar_id"], name: "index_bottles_on_cellar_id", using: :btree
 
   create_table "cellars", force: :cascade do |t|
-    t.string  "name"
+    t.string  "name",      null: false
+    t.string  "photo_url", null: false
     t.integer "num_btls"
   end
 
