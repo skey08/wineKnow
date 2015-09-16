@@ -1,0 +1,17 @@
+<%= form_for [@cellar, @bottle] do |f| %>
+
+  <div><%= f.label :winery %></div>
+  <div><%= f.text_field :winery %></div>
+
+  <div><%= f.label :region %></div>
+  <div><%= f.text_field :region %></div>
+
+  <div><%= f.label :varietal %></div>
+  <div><%= f.text_field :varietal %></div>
+
+  <div><%= f.label :year %></div>
+  <div><%= f.text_field :year %></div>
+
+  <%= f.submit %>
+
+<% end  %>

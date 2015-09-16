@@ -1,0 +1,14 @@
+<%= form_for(@cellar) do |f| %>
+
+  <div><%= f.label :name, "Name:" %></div>
+  <div><%= f.text_field :name %></div>
+
+  <div><%= f.label :photo_url, "Photo URL:" %></div>
+  <div><%= f.text_field :photo_url %></div>
+
+  <div><%= f.label :num_btls, "How Many Bottles In Your Collection?" %></div>
+  <div><%= f.text_field :num_btls %></div>
+
+  <%= f.submit %>
+
+<% end %>

@@ -1,0 +1,7 @@
+<h2>Edit Cellar Information</h2>
+
+<%= render partial: "form" %>
+
+<%= form_for(@cellar, method: :delete) do |f| %>
+  <%= f.submit "Delete This Cellar", class: "delete" %>
+<% end  %>
