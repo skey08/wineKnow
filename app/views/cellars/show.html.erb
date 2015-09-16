@@ -1,0 +1,13 @@
+<h1><%= @cellar.name %></h1>
+<div class="owner_bottles">
+  <% @cellar.bottles.each do |bottle| %>
+    <div>
+      <ul>
+        <li><%= link_to bottle.winery, cellar_bottle_path(@cellar, bottle) %></li>
+        <li><%= bottle.region %></li>
+        <li><%= bottle.varietal %></li>
+        <li><%= bottle.year %></li>
+      </ul>
+    </div>
+  <% end %>
+</div>

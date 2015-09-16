@@ -1,2 +1,6 @@
-<h1>Bottles#index</h1>
-<p>Find me in app/views/bottles/index.html.erb</p>
+<div>
+  <% @bottles.each do |bottle| %>
+    <div><%= bottle.winery %></div>
+    <!-- show winery name next to bottle -->
+  <% end %>
+</div>

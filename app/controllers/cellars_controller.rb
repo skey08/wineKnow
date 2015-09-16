@@ -6,6 +6,9 @@ class CellarsController < ApplicationController
   end
 
   #show
+  def show
+    @cellar = Cellar.find(params[:id])
+  end
 
   #new
 

@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
   root to: 'cellars#index'
+  get 'bottles' => 'bottles#index'
 
   resources :cellars do
     resources :bottles
   end
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
