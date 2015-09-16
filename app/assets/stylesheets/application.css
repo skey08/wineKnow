@@ -13,15 +13,35 @@
  *= require_tree .
  *= require_self
  */
+body {
+  margin: 0;
+}
 
 img {
   width: 400px;
 }
 
-body {
-  margin: 0;
+.cellar_photos {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+.cellar_photos img {
+    width: 100%;
 }
 
 ul {
     list-style-type: none;
+}
+
+.delete {
+  border: 0;
+  padding: 0;
+  background: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline;
+  font-size: .7em;
 }
