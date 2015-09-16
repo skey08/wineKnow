@@ -8,11 +8,27 @@
 </head>
 <body>
 
-  <h1>Wine App</h1>
+  <header>
+    <h1>Wine App</h1>
 
-  <%= link_to 'All Bottles', bottles_path %>
-  <%= link_to 'Browse A Cellar', cellars_path %>
-  <%= link_to 'Add Your Wine Cellar', new_cellar_path %>
+    <%= link_to 'All Bottles', bottles_path %>
+    <%= link_to 'Browse A Cellar', cellars_path %>
+    <%= link_to 'Add Your Wine Cellar', new_cellar_path %>
+
+    <% if current_user %>
+      <%= link_to 'My Collection', mycellars_path %>
+    <% else %>
+    <% end %>
+
+    <div class="devise">
+      <% if current_user %>
+        <%= link_to 'Signout', destroy_user_session_path, :method => :delete %>
+      <% else %>
+        <%= link_to 'Signup', new_user_registration_path %>
+        <%= link_to 'Login', new_user_session_path %>
+      <% end %>
+    </div>
+  </header>
 
 <%= yield %>
 

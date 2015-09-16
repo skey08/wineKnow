@@ -1,14 +1,20 @@
 <h1><%= @cellar.name %></h1>
-<%= link_to "Edit Cellar", edit_cellar_path %>
-<%= link_to "Add A Bottle", new_cellar_bottle_path(@cellar) %>
+<% if @cellar.user_id == current_user.id %>
+  <%= link_to "Edit Cellar", edit_cellar_path %>
+  <%= link_to "Add A Bottle", new_cellar_bottle_path(@cellar) %>
+<% end %>
 <div class="owner_bottles">
   <% @cellar.bottles.each do |bottle| %>
     <div>
       <ul>
-        <li><%= link_to bottle.winery, cellar_bottle_path(@cellar, bottle) %>
-          <%= form_for [@cellar, bottle], method: :delete do |f| %>
-                <%= f.submit "Delete Bottle", class: "delete" %>
-              <% end  %></li>
+        <li>
+            <%= link_to bottle.winery, cellar_bottle_path(@cellar, bottle) %>
+          <% if @cellar.user_id == current_user.id %>
+            <%= form_for [@cellar, bottle], method: :delete do |f| %>
+                  <%= f.submit "Delete Bottle", class: "delete" %>
+            <% end  %>
+          <% end %>
+        </li>
         <li><%= bottle.region %></li>
         <li><%= bottle.varietal %></li>
         <li><%= bottle.year %></li>

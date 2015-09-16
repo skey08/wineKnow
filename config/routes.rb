@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   root to: 'cellars#index'
   get 'bottles' => 'bottles#index'
+  get "mycellars" => "cellars#mycellars"
 
   resources :cellars do
     resources :bottles

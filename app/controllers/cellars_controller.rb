@@ -1,8 +1,14 @@
 class CellarsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
   #index
   def index
     @cellars = Cellar.all
+  end
+
+  #unique route for individual cellars
+  def mycellars
+    @cellars = current_user.cellars
   end
 
   #show
@@ -17,7 +23,7 @@ class CellarsController < ApplicationController
 
   #create
   def create
-    @cellar = Cellar.new(cellar_params)
+    @cellar = current_user.cellars.create(cellar_params)
     if @cellar.save
       redirect_to "/cellars/#{@cellar.id}"
     else
