@@ -1,10 +1,13 @@
-<%= form_for(@cellar) do |f| %>
+<%= form_for (@cellar), :html => {:multipart => true} do |f| %>
 
   <div><%= f.label :name, "Name:" %></div>
   <div><%= f.text_field :name %></div>
 
-  <div><%= f.label :photo_url, "Photo URL:" %></div>
-  <div><%= f.text_field :photo_url %></div>
+  <div><%= f.label :image, "Upload an Image" %></div>
+  <div><%= f.file_field :image %></div>
+
+  <div><%= f.label :remote_image_url, "Or Photo URL" %></div>
+  <div><%= f.text_field :remote_image_url %></div>
 
   <div><%= f.label :num_btls, "How Many Bottles In Your Collection?" %></div>
   <div><%= f.text_field :num_btls %></div>

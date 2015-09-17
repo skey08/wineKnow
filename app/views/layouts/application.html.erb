@@ -2,6 +2,10 @@
 <html>
 <head>
   <title>Wine</title>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,28 +13,29 @@
 <body>
 
   <header>
-    <h1>Wine App</h1>
+    <h1 class="appname"><%= link_to 'wineKnow', root_path, class: 'appname' %></h1>
 
-    <%= link_to 'All Bottles', bottles_path %>
-    <%= link_to 'Browse A Cellar', cellars_path %>
-    <%= link_to 'Add Your Wine Cellar', new_cellar_path %>
+    <%= link_to 'All Bottles', bottles_path, class: 'click' %>
+    <%= link_to 'Browse A Cellar', cellars_path, class: 'click' %>
+    <%= link_to 'Add Your Wine Cellar', new_cellar_path, class: 'click' %>
 
     <% if current_user %>
-      <%= link_to 'My Collection', mycellars_path %>
+      <%= link_to 'My Collection', mycellars_path, class: 'click' %>
     <% else %>
     <% end %>
 
     <div class="devise">
       <% if current_user %>
-        <%= link_to 'Signout', destroy_user_session_path, :method => :delete %>
+        <%= link_to 'Signout', destroy_user_session_path, :method => :delete, class: 'click' %>
       <% else %>
-        <%= link_to 'Signup', new_user_registration_path %>
-        <%= link_to 'Login', new_user_session_path %>
+        <%= link_to 'Signup', new_user_registration_path, class: 'click' %>
+        <%= link_to 'Login', new_user_session_path, class: 'click' %>
       <% end %>
     </div>
   </header>
-
-<%= yield %>
+<div class="content">
+  <%= yield %>
+</div>
 
 </body>
 </html>

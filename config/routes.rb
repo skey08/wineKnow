@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root to: 'cellars#index'
+  root to: 'cellars#welcome'
   get 'bottles' => 'bottles#index'
   get "mycellars" => "cellars#mycellars"
 
