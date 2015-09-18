@@ -2,5 +2,6 @@
   <% @cellars.each do |cellar| %>
     <!-- <%= link_to cellar.name, cellar_path(cellar) %> -->
     <div><%= link_to (image_tag cellar.photo_url), cellar_path(cellar) %></div>
+    <%= cellar.num_btls %> bottles in my collection
   <% end %>
 </div>

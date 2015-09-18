@@ -14,23 +14,24 @@
 
   <header>
     <h1 class="appname"><%= link_to 'wineKnow', root_path, class: 'appname' %></h1>
+    <div class="nav">
+      <%= link_to 'All Bottles on wineKnow', bottles_path, class: 'click' %>
+      <%= link_to 'Browse A Cellar', cellars_path, class: 'click' %>
+      <%= link_to 'Add Your Wine Cellar', new_cellar_path, class: 'click' %>
 
-    <%= link_to 'All Bottles', bottles_path, class: 'click' %>
-    <%= link_to 'Browse A Cellar', cellars_path, class: 'click' %>
-    <%= link_to 'Add Your Wine Cellar', new_cellar_path, class: 'click' %>
-
-    <% if current_user %>
-      <%= link_to 'My Collection', mycellars_path, class: 'click' %>
-    <% else %>
-    <% end %>
-
-    <div class="devise">
       <% if current_user %>
-        <%= link_to 'Signout', destroy_user_session_path, :method => :delete, class: 'click' %>
+        <%= link_to 'My Collection', mycellars_path, class: 'click' %>
       <% else %>
-        <%= link_to 'Signup', new_user_registration_path, class: 'click' %>
-        <%= link_to 'Login', new_user_session_path, class: 'click' %>
       <% end %>
+
+      <div class="devise">
+        <% if current_user %>
+          <%= link_to 'Signout', destroy_user_session_path, :method => :delete, class: 'click' %>
+        <% else %>
+          <%= link_to 'Signup', new_user_registration_path, class: 'click' %>
+          <%= link_to 'Login', new_user_session_path, class: 'click' %>
+        <% end %>
+      </div>
     </div>
   </header>
 <div class="content">

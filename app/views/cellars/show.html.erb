@@ -1,7 +1,7 @@
 <h1><%= @cellar.name %></h1>
   <% if current_user && @cellar.user_id == current_user.id %>
-    <%= link_to "Edit Cellar", edit_cellar_path %>
-    <%= link_to "Add A Bottle", new_cellar_bottle_path(@cellar) %>
+    <%= link_to "Edit Cellar ", edit_cellar_path %>|
+    <%= link_to " Add A Bottle", new_cellar_bottle_path(@cellar) %>
   <% end %>
 <div class="owner_bottles">
   <% @cellar.bottles.each do |bottle| %>

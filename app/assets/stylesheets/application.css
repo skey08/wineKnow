@@ -38,8 +38,8 @@ body {
 }
 
 .cellar_photos {
-    width: 600px;
-    height: 600px;
+    width: 80%%;
+    height: 0%;
     overflow: hidden;
     display: -webkit-box;
     display: -webkit-flex;
@@ -168,6 +168,16 @@ a:hover.click {
   color: #fff;
   text-decoration: none;
   font-family: 'Kaushan Script', cursive;
+}
+
+.owner_bottles ul {
+  padding-top: 1em;
+}
+
+@media (max-width: 400){
+  nav{
+    display: inline;
+  }
 }
 
 #map {
