@@ -17,5 +17,9 @@ cellars = Cellar.create ([
   Bottle.create ([
     { winery: "Del Dotto", region: "Napa Valley, CA", varietal: "Sangiovese", year: 2001, cellar_id: cellars[0].id },
     { winery: "Opus One", region: "Napa Valley, CA", varietal: "Cabernet Blend", year: 2004, cellar_id: cellars[0].id },
-    { winery: "Jordan", region: "Sonoma, CA", varietal: "Chardonnay", year: 2012, cellar_id: cellars[1].id }
+    { winery: "Jordan", region: "Sonoma, CA", varietal: "Chardonnay", year: 2012, cellar_id: cellars[1].id },
+    { winery: "Chateau Montelena", region: "Napa, CA", varietal: "Chardonnay", year: 1974, cellar_id: cellars[1].id },
+    { winery: "Chateau Petrus", region: "Bordeaux, France", varietal: "Blend", year: 1980, cellar_id: cellars[1].id },
+    { winery: "Romanée Conté", region: "Burgundy, France", varietal: "Pinot Noir", year: 2005, cellar_id: cellars[1].id }
+
     ])
