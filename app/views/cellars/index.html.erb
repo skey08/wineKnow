@@ -2,6 +2,6 @@
   <% @cellars.each do |cellar| %>
     <!-- <%= link_to cellar.name, cellar_path(cellar) %> -->
     <div><%= link_to (image_tag cellar.photo_url), cellar_path(cellar) %></div>
-    <div><%= link_to (image_tag cellar.image_url.to_s), cellar_path(cellar) %></div>
+    <!-- <div><%= link_to (image_tag cellar.image_url.to_s), cellar_path(cellar) %></div> -->
   <% end %>
 </div>
