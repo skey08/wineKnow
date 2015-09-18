@@ -1,7 +1,7 @@
 <div>
-  <% if current_user || @cellar.user_id == current_user.id %>
-    <%= link_to "Edit Bottle", edit_cellar_bottle_path %>
-  <% end %>
+    <% if current_user %>
+      <%= link_to "Edit Bottle", edit_cellar_bottle_path %>
+    <% end %>
 </div>
 <ul>
   <li><%= @bottle.winery %></li>
