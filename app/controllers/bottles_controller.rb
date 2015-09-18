@@ -8,7 +8,7 @@ class BottlesController < ApplicationController
   #show
   def show
     @bottle = Bottle.find(params[:id])
-    @cellar = Cellar.find(params[:id])
+    # @cellar = Cellar.find(params[:id])
   end
 
   #new
